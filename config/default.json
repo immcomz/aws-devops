@@ -1,8 +1,8 @@
 {
   "user": "postgres",
-  "host": "db-aws.cpqmban6dwlr.ap-southeast-4.rds.amazonaws.com",
+  "host": "database-1.c1f53zmuidi2.ap-southeast-2.rds.amazonaws.com",
   "database": "postgres",
   "password": "12345678",
-  "db_port": 5432,
-  "port": 3000
+  "db_port": "5432",
+  "port": 1000
 }

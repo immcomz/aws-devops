@@ -7,16 +7,22 @@ import config from "config";
 const app = express();
 dotenv.config();
 const port = process.env.PORT || config.get("port");
+// const user = process.env.DB_USER || config.get("user");
+// const host = process.env.DB_HOST || config.get("host");
+// const database = process.env.DATABASE || config.get("database");
+// const password = process.env.PASSWORD || config.get("password");
+// const db_port = process.env.DB_PORT || config.get("db_port");
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
 
 const pool = new Pool({
-  // user: process.env.DB_USER || config.get("user"),
-  // host: process.env.DB_HOST || config.get("host"),
-  // database: process.env.DATABASE || config.get("database"),
-  // password: process.env.PASSWORD || config.get("password"),
+  // user: user,
+  // host: host,
+  // database: database,
+  // password: password,
+  // port: 5432,
   user: config.get("user"),
   host: config.get("host"),
   database: config.get("database"),

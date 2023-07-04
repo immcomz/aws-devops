@@ -1,7 +1,7 @@
 import psycopg2
 
 connection = psycopg2.connect(
-    host='db-aws.cpqmban6dwlr.ap-southeast-4.rds.amazonaws.com',
+    host='database-1.c1f53zmuidi2.ap-southeast-2.rds.amazonaws.com',
     database='postgres',
     user='postgres',
     password='12345678',
