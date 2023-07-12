@@ -29,7 +29,7 @@ const pool = new Pool({
   password: config.get("password"),
   port: config.get("db_port"),
 });
-console.log(process.env.DB_USER);
+//console.log(process.env.DB_USER);
 // pool
 //   .connect()
 //   .then(() => {
