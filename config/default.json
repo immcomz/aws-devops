@@ -1,4 +1,6 @@
 {
+  "jwtPrivateKey": "unsecureKey",
+  "requiresAuth": false,
   "user": "postgres",
   "host": "database-1.c1f53zmuidi2.ap-southeast-2.rds.amazonaws.com",
   "database": "postgres",
