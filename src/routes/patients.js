@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 const { Patient } = require("../models/patient");
 
 // Get all patients
@@ -12,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 // Delete a patient
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", [auth, admin], async (req, res) => {
   try {
     const patient = await Patient.findByPk(req.params.id);
 
