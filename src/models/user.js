@@ -1,13 +1,13 @@
-const { DataTypes, Model } = require("sequelize");
+const { DataTypes, Model, Sequelize } = require("sequelize");
 const Joi = require("joi");
 
 const sequelize = new Sequelize({
   dialect: "postgres",
-  host: "your_host",
-  port: "your_port",
-  username: "your_username",
-  password: "your_password",
-  database: "your_database",
+  host: "localhost",
+  port: "5432",
+  username: "postgres",
+  password: "postgres",
+  database: "postgres",
 });
 
 class User extends Model {

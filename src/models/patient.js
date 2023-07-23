@@ -1,14 +1,20 @@
-const { DataTypes, Model } = require("sequelize");
-const sequelize = new Sequelize({
-  dialect: "postgres",
-  host: "your_host",
-  port: "your_port",
-  username: "your_username",
-  password: "your_password",
-  database: "your_database",
-});
+const { DataTypes, Model, Sequelize } = require("sequelize");
+const config = require("config");
+const dbConfig = config.get("db");
+const winston = require("winston");
 
 class Patient extends Model {}
+
+const sequelize = new Sequelize(
+  dbConfig.database,
+  dbConfig.username,
+  dbConfig.password,
+  {
+    host: dbConfig.host,
+    port: dbConfig.port,
+    dialect: "postgres",
+  }
+);
 
 Patient.init(
   {
@@ -28,6 +34,7 @@ Patient.init(
   },
   {
     sequelize,
+
     modelName: "Patient",
     tableName: "patients",
   }
