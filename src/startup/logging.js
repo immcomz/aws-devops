@@ -24,7 +24,7 @@ module.exports = function () {
     password: "postgres", // Database password
     database: "postgres", // Database name
 
-    benchmark: true, // Enable benchmarking of SQL queries
+    benchmark: false, // Enable benchmarking of SQL queries
     define: {
       timestamps: true, // Include timestamp columns (createdAt, updatedAt) in the models
       underscored: false, // Use underscored naming convention for columns (e.g., created_at, updated_at)
