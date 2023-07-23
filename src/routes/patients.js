@@ -1,20 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../middleware/auth");
-const admin = require("../middleware/admin");
-const { Patient } = require("../models/patient");
+const patient = require("../models/patient");
 
 // Get all patients
 router.get("/", async (req, res) => {
   try {
-    const patients = await Patient.findAll();
+    const patients = await patient.findAll();
     res.send(patients);
   } catch (error) {
+    console.log(error);
     res.status(500).send("Internal Server Error");
   }
 });
+
 // Delete a patient
-router.delete("/:id", [auth, admin], async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const patient = await Patient.findByPk(req.params.id);
 
@@ -25,6 +25,7 @@ router.delete("/:id", [auth, admin], async (req, res) => {
     await patient.destroy();
     res.send("Patient deleted successfully");
   } catch (error) {
+    console.log(error);
     res.status(500).send("Internal Server Error");
   }
 });
