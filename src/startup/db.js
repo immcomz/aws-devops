@@ -1,10 +1,9 @@
 const winston = require("winston");
 const { Sequelize } = require("sequelize");
 const config = require("config");
+const dbConfig = config.get("db");
 
 module.exports = function () {
-  const dbConfig = config.get("db"); // Assuming you have the database configuration in your config file
-
   const sequelize = new Sequelize(
     dbConfig.database,
     dbConfig.username,
